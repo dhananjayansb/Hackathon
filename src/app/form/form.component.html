@@ -1,0 +1,32 @@
+
+    <div class="bg">
+        <img src="../../assets/bg.png" width="100%" height="100%" >
+        <mat-card class="card">
+            <div *ngFor="let value of sampleData[1].Attributes">
+                <div class="textbox" *ngIf="value.Type==='TextBox'">
+                        <label>{{value.Name}}</label> &nbsp;
+                        <input maxlength="10" class="input" matInput type="text">  
+                </div>
+                <div class="password" *ngIf="value.Type==='SecretTextBox'">
+                        <label>{{value.Name}}</label> &nbsp;
+                        <input maxlength="10" class="input" matInput type="password">  
+                </div>
+                <div class="dropdown" *ngIf="value.DropdownValues">
+                    <label>UserType</label>&nbsp; &nbsp;
+                    <select class="drop" matNativeControl required>
+                        <option value="Guest">Guest</option>
+                        <option value="Admin">Admin</option>
+                      </select>
+                  </div>
+                </div> &nbsp;  &nbsp;
+            <div  *ngIf="sampleData[0].ActionDisplayName==='Login'">
+                <button class="button" (click)="onClickMe()">Login</button>
+                <h2>{{msg}}</h2>
+            </div>
+            <div  *ngIf="sampleData[0].ActionDisplayName==='Submit'">
+              <button class="button" mat-raised-button>Submit</button>
+          </div>
+        </mat-card>
+    </div>
+
+
