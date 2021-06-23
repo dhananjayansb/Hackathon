@@ -12,10 +12,10 @@ export class FormComponent implements OnInit {
   msg!: string;
   image:string = "assets/bg.png";
   onClickMe () {
-    this.msg = 'Successful';
+    this.msg = 'Successful !';
     return this.msg;
   }
-
+  hide = true;
   constructor() { }
 
   ngOnInit(): void {

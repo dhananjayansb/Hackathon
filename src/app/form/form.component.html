@@ -5,27 +5,31 @@
             <div *ngFor="let value of sampleData[1].Attributes">
                 <div class="textbox" *ngIf="value.Type==='TextBox'">
                         <label>{{value.Name}}</label> &nbsp;
-                        <input maxlength="10" class="input" matInput type="text">  
+                        <input  maxlength="10"  class="input" matInput type="text">
                 </div>
                 <div class="password" *ngIf="value.Type==='SecretTextBox'">
                         <label>{{value.Name}}</label> &nbsp;
-                        <input maxlength="10" class="input" matInput type="password">  
+                        <input matInput maxlength="10" class="input" matInput type="password">
                 </div>
-                <div class="dropdown" *ngIf="value.DropdownValues">
+                <div class="dropdown" *ngIf="value.Type==='Dropdown'">
                     <label>UserType</label>&nbsp; &nbsp;
-                    <select class="drop" matNativeControl required>
-                        <option value="Guest">Guest</option>
-                        <option value="Admin">Admin</option>
-                      </select>
-                  </div>
-                </div> &nbsp;  &nbsp;
-            <div  *ngIf="sampleData[0].ActionDisplayName==='Login'">
-                <button class="button" (click)="onClickMe()">Login</button>
+                    <select  class="drop" matNativeControl required>
+                        <option *ngFor="let option of value.DropdownValues" [value]=option.Value>{{option.DisplayValue}}</option>
+                    </select>
+                </div>
+                <div class="dropdown" *ngIf="value.Type==='Radio'">
+                  <mat-radio-group>
+                      <div fxLayout="row" fxLayoutGap="10%" >
+                      <label>{{value.Name}}</label> &nbsp;
+                      <mat-radio-button  *ngFor="let option of value.Options" [value]=option.Value>{{option.DisplayValue}}&nbsp; &nbsp;</mat-radio-button>
+                      </div>
+                    </mat-radio-group>
+                </div>
+             </div>&nbsp;  &nbsp;
+            <div>
+                <button class="button" (click)="onClickMe()">{{ sampleData[0].ActionDisplayName}}</button>
                 <h2>{{msg}}</h2>
             </div>
-            <div  *ngIf="sampleData[0].ActionDisplayName==='Submit'">
-              <button class="button" mat-raised-button>Submit</button>
-          </div>
         </mat-card>
     </div>
 

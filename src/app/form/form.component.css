@@ -28,16 +28,15 @@
 
 .drop
 {
-    padding: 5px;
-    font-size: 16px;
-    border-width: 3px;
-    border-color: #5686f9;
-    background-color: #ffffff;
-    color: #000000;
-    border-style: solid;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
-    width: 100px;
+  padding: 4px;
+     font-size: 15px;
+     border-width: 1px;
+     border-color: #4f00c5;
+     background-color: #ffffff;
+     color: #000000;
+     border-style: solid;
+     border-radius: 5px;
+     box-shadow: 0px 0px 5px rgba(79,0,197,.70);
 }
 .drop:focus {
     outline:none;
@@ -45,9 +44,9 @@
 
 .card
 {
-  margin: auto; 
+  margin: auto;
   margin-top: 10%;
-  flex-direction: column; 
+  flex-direction: column;
   background: white;
   width:auto;
   padding: 20px 25px;
@@ -65,15 +64,15 @@
 
 .input
 {
-    padding: 5px;
-     font-size: 16px;
-     border-width: 3px;
-     border-color: #5686f9;
+  padding: 4px;
+     font-size: 15px;
+     border-width: 1px;
+     border-color: #4f00c5;
      background-color: #ffffff;
      color: #000000;
      border-style: solid;
-     border-radius: 8px;
-     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     border-radius: 5px;
+     box-shadow: 0px 0px 5px rgba(79,0,197,.70);
 }
 .input:focus {
     outline:none;

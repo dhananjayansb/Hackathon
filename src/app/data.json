@@ -24,21 +24,6 @@
         ],
         "Name": "UserType",
         "Type": "Dropdown"
-      },
-      {
-        "options":[
-          {
-            "DisplayValue": "Male",
-            "Value": "male"
-          },
-          {
-            "DisplayValue": "Female",
-            "Value": "female"
-          }
-
-        ],
-        "Name": "Gender",
-        "Type": "Radio"
       }
     ]}
 ]
