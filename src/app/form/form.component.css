@@ -1,99 +1,14 @@
-
-.textbox
-{
-    width: 100%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 8px 0;
-    margin: 8px 0;
-}
-
-.password
-{
-    width: 100%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 8px 0;
-    margin: 8px 0;
-}
-
-.dropdown
-{
-    width: 100%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 8px 0;
-    margin: 8px 0;
-}
-
-.drop
-{
-  padding: 4px;
-     font-size: 15px;
-     border-width: 1px;
-     border-color: #4f00c5;
-     background-color: #ffffff;
-     color: #000000;
-     border-style: solid;
-     border-radius: 5px;
-     box-shadow: 0px 0px 5px rgba(79,0,197,.70);
-}
-.drop:focus {
-    outline:none;
-}
-
 .card
 {
-  margin: auto;
-  margin-top: 10%;
-  flex-direction: column;
   background: white;
-  width:auto;
-  padding: 20px 25px;
   border-radius: 20px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 19px 38px #00000021;
   opacity: 85%;
-  position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position:relative;
+  margin-top: 30px;
 }
 
-.input
-{
-  padding: 4px;
-     font-size: 15px;
-     border-width: 1px;
-     border-color: #4f00c5;
-     background-color: #ffffff;
-     color: #000000;
-     border-style: solid;
-     border-radius: 5px;
-     box-shadow: 0px 0px 5px rgba(79,0,197,.70);
-}
-.input:focus {
-    outline:none;
-}
-
-.button
-{
-    padding: 8px;
-     font-size: 15px;
-     border-width: 3px;
-     border-color: #008c30;
-     background-color: #ffffff;
-     color: #000000;
-     border-style: solid;
-     border-radius: 16px;
-     box-shadow: 0px 0px 5px rgba(255,147,88,.86);
-     width: 150px;
-     justify-content: center;
-}
-
-.bg
-{
-    height: 97.55vh;
+.mat-raised-button{
+  background-color:	#41ff61be;
+  color: rgb(87, 87, 87) !important;
 }

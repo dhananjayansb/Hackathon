@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import data from '../../app/data.json';
 
 @Component({
@@ -6,18 +7,13 @@ import data from '../../app/data.json';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
+
 export class FormComponent implements OnInit {
 
-  sampleData:any = data;
-  msg!: string;
-  image:string = "assets/bg.png";
-  onClickMe () {
-    this.msg = 'Successful !';
-    return this.msg;
-  }
   hide = true;
+  sampleData:any = data;
   constructor() { }
-
+  DropdownValues = new FormControl('', Validators.required);
   ngOnInit(): void {
   }
 

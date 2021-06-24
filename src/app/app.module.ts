@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { FormComponent } from './form/form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatIconModule} from '@angular/material/icon';
-import { FormComponent } from './form/form.component';
-import { RouterModule, Routes } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -21,17 +24,18 @@ import { RouterModule, Routes } from '@angular/router';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatFormFieldModule,
-    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     MatSelectModule,
     MatRadioModule,
-    MatIconModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'form' },
-      { path: 'form', component: FormComponent },
-     
-    ])
-    
+    MatCardModule,
+    NgxAnimatedGradientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

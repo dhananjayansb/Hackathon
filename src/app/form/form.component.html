@@ -1,36 +1,63 @@
+<div>
+  &nbsp;
+  <div fxLayoutAlign="center">
+    <img  src="../../assets/logo.png">
+  </div>
+  &nbsp;
+  <div fxLayout="row"  fxLayoutAlign="center" >
+    <mat-card class="card">
+      <form action="">
+        <div *ngFor="let value of sampleData[1].Attributes">
 
-    <div class="bg">
-        <img src="../../assets/bg.png" width="100%" height="100%" >
-        <mat-card class="card">
-            <div *ngFor="let value of sampleData[1].Attributes">
-                <div class="textbox" *ngIf="value.Type==='TextBox'">
-                        <label>{{value.Name}}</label> &nbsp;
-                        <input  maxlength="10"  class="input" matInput type="text">
-                </div>
-                <div class="password" *ngIf="value.Type==='SecretTextBox'">
-                        <label>{{value.Name}}</label> &nbsp;
-                        <input matInput maxlength="10" class="input" matInput type="password">
-                </div>
-                <div class="dropdown" *ngIf="value.Type==='Dropdown'">
-                    <label>UserType</label>&nbsp; &nbsp;
-                    <select  class="drop" matNativeControl required>
-                        <option *ngFor="let option of value.DropdownValues" [value]=option.Value>{{option.DisplayValue}}</option>
-                    </select>
-                </div>
-                <div class="dropdown" *ngIf="value.Type==='Radio'">
-                  <mat-radio-group>
-                      <div fxLayout="row" fxLayoutGap="10%" >
-                      <label>{{value.Name}}</label> &nbsp;
-                      <mat-radio-button  *ngFor="let option of value.Options" [value]=option.Value>{{option.DisplayValue}}&nbsp; &nbsp;</mat-radio-button>
-                      </div>
-                    </mat-radio-group>
-                </div>
-             </div>&nbsp;  &nbsp;
-            <div>
-                <button class="button" (click)="onClickMe()">{{ sampleData[0].ActionDisplayName}}</button>
-                <h2>{{msg}}</h2>
-            </div>
-        </mat-card>
-    </div>
+          <!--username field-->
+          <div *ngIf="value.Type==='TextBox'">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{value.Name}}</mat-label>
+              <input maxlength="10" required matInput placeholder="Enter here"/>
+            </mat-form-field>
+          </div>
 
+          <!-- password field -->
+          <div *ngIf="value.Type==='SecretTextBox'">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{value.Name}}</mat-label>
+              <input maxlength="10" matInput placeholder="Enter here" [type]="hide ? 'password' : 'text'" formControlName="password" required/>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <!--DropDown Feild-->
+          <div *ngIf="value.Type==='Dropdown'">
+            <mat-form-field appearance="outline">
+              <mat-label>{{value.Name}}</mat-label>
+              <mat-select  [formControl] ="DropdownValues" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let option of value.DropdownValues" [value]=option.Value>
+                  {{option.DisplayValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="DropdownValues.hasError('required')">Please choose a Gender</mat-error>
+            </mat-form-field>
+          </div>
+
+          <!--Radio Feild-->
+          <div *ngIf="value.Type==='Radio'">
+            <mat-radio-group>
+              <div fxLayout="row" fxLayoutGap="10%" >
+              <label>{{value.Name}}</label>
+              <mat-radio-button  *ngFor="let option of value.Options" [value]=option.Value>{{option.DisplayValue}}</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+
+        </div> &nbsp;
+        <!--Button Feild-->
+        <div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="gappx">
+          <button mat-raised-button  type="submit">{{ sampleData[0].ActionDisplayName}}</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+
+</div>
 
