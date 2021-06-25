@@ -8,27 +8,27 @@
     <mat-card class="card">
       <form action="">
         <div *ngFor="let value of sampleData[1].Attributes">
-
+          &nbsp;
           <!--username field-->
-          <div *ngIf="value.Type==='TextBox'">
+          <div fxLayoutAlign="center" *ngIf="value.Type==='TextBox'">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>{{value.Name}}</mat-label>
-              <input maxlength="10" required matInput placeholder="Enter here"/>
+              <input maxlength="10" required matInput placeholder="Enter {{value.Name}}"/>
             </mat-form-field>
           </div>
 
           <!-- password field -->
-          <div *ngIf="value.Type==='SecretTextBox'">
+          <div fxLayoutAlign="center" *ngIf="value.Type==='SecretTextBox'">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>{{value.Name}}</mat-label>
-              <input maxlength="10" matInput placeholder="Enter here" [type]="hide ? 'password' : 'text'" formControlName="password" required/>
+              <input maxlength="10" matInput placeholder="Enter {{value.Name}}" [type]="hide ? 'password' : 'text'" formControlName="password" required/>
               <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
           </div>
 
           <!--DropDown Feild-->
-          <div *ngIf="value.Type==='Dropdown'">
-            <mat-form-field appearance="outline">
+          <div fxLayoutAlign="center" *ngIf="value.Type==='Dropdown'">
+            <mat-form-field class="full-width" appearance="outline">
               <mat-label>{{value.Name}}</mat-label>
               <mat-select  [formControl] ="DropdownValues" required>
                 <mat-option>--</mat-option>
@@ -36,12 +36,12 @@
                   {{option.DisplayValue}}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="DropdownValues.hasError('required')">Please choose a Gender</mat-error>
+              <mat-error *ngIf="DropdownValues.hasError('required')">Please choose a {{value.Name}}</mat-error>
             </mat-form-field>
           </div>
 
           <!--Radio Feild-->
-          <div *ngIf="value.Type==='Radio'">
+          <div fxLayoutAlign="center" *ngIf="value.Type==='Radio'">
             <mat-radio-group>
               <div fxLayout="row" fxLayoutGap="10%" >
               <label>{{value.Name}}</label>
